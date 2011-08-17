@@ -1,6 +1,11 @@
 FreshApp2::Application.routes.draw do
+  resources :microposts
+
   resources :users
 
+  match "all_users", :controller => "users", :action => "index"
+  match ":name", :controller => "users", :action => "show" 
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
